@@ -1,0 +1,24 @@
+{% extends 'sample.html'%}
+{% load static %}
+
+{% block  title %} 
+Booking
+{% endblock %}
+
+{% block content %}
+<h2 style="text-align: center;" >Appointment</h2>
+<hr>
+<div>
+<div style="margin: auto; width: 300px; border: 1px outset black; padding: auto;">
+    <div style="text-align: center; margin: auto; background-color: azure; ">
+        <form action=""  method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <div >
+                <button type="submit" style="background-color: blue; color: white; box-shadow: inset;">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

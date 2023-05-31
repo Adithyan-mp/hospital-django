@@ -1,0 +1,30 @@
+{% extends 'sample.html'%}
+{% load static %}
+
+{% block  title %} 
+Doctors
+{% endblock %}
+
+{% block content %}
+
+<div>
+    <div>
+        {% for i in doctor %}
+            <div style=" align-items: center; width: 250px; height: 330px; border: 2px whitesmoke; margin: 10px;  display: inline-block; border-radius: 5px; border-style: inset; box-shadow: 10px; margin: 30px;">
+                <div style= "border-radius: 5px; border-color: whitesmoke;" >
+                    <img style="background-color: white; width: 250px;" src="{{i.doc_image.url}}" alt="doctor image">
+                </div>
+                <div style="text-align: center;">
+                    <div style="padding: 3px;">
+                        <h5> Dr. {{i.doc_name}} </h5>
+                    </div>
+                    <div>
+                        <p> {{i.doc_spec}} </p>
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

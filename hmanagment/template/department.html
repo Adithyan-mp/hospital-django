@@ -1,0 +1,23 @@
+{% extends 'sample.html'%}
+{% load static %}
+
+{% block  title %} 
+Department
+{% endblock %}
+
+{% block content %}
+<h2 style="text-align: center;">Departments</h2>
+<hr>
+
+{% for i in dept %}
+<div style="margin: auto; width: 50%; background-color: rgb(106, 106, 106) ; border: 1px solid black; margin-bottom: 20px;" >
+    <div style="padding: 3px;" >
+        <h1 style="text-align: center; color: white;"> {{i.dept_name}} </h1>
+    </div>
+    <div style="padding: 3px;">
+        <p style="text-align: center; color: white;"> {{i.dept_discription}} </p>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}

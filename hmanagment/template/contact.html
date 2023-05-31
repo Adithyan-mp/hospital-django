@@ -1,0 +1,60 @@
+{% extends 'sample.html'%}
+{% load static %}
+
+{% block  title %} 
+Contact Us
+{% endblock %}
+
+{% block content %}
+<body style="background-color: rgb(255, 255, 255);">
+    <div>
+        <div style="height: 50px; background-color: rgb(255, 247, 247); border-bottom: 1px inherit ; border-radius: 2px ; ">
+            <h2 style="text-align: center;">City Hospital Contact Info </h2>
+        </div>
+
+        <div>
+            <div>
+                {% for i in contacts %}
+                    <div style=" align-items: center; width: 250px; height: 330px; border: 2px whitesmoke; margin: 10px;  display: inline-block; border-radius: 5px; border-style: inset; box-shadow: 10px; margin: 30px;">
+                        <div style= "border-radius: 5px; border-color: whitesmoke;" >
+                            <img style="background-color: white; width: 250px;" src="{{i.doc_image.url}}" alt="doctor image">
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="padding: 3px;">
+                                <h5> Dr. {{i.doc_name}} </h5>
+                            </div>
+                            <div>
+                                <p> {{i.doc_spec}} </p>
+                            </div>
+                            <div>
+                                <p style="text-align: left;"> Phone Number : {{i.Phone_Number}} </p>
+                            </div>
+                            <div>
+                                <p style="text-align: left;">Email : {{i.Email}} </p>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+            </div>
+        <div>
+    </div>
+
+
+
+
+
+
+
+<div style="position: fixed; bottom: 0px; width: 100% ; background-color: rgb(33, 143, 186);;">
+    <div>
+        <div style="background-color: rgb(33, 143, 186); width: 100%;">
+            <p style="color: white; margin-left: 6px;">Kindly note the working hour is morning 10 AM to 12 PM</p>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+{% endblock %}
